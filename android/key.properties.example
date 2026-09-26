@@ -1,0 +1,14 @@
+# Release signing configuration — DO NOT COMMIT the real key.properties or keystore
+# 1. Generate a release keystore (run once, keep secure backup):
+#    keytool -genkey -v -keystore app/upload-keystore.jks -keyalg RSA -keysize 2048 -validity 10000 -alias upload
+# 2. Copy this file to android/key.properties and fill the actual passwords:
+#    cp android/key.properties.example android/key.properties
+# 3. Ensure android/key.properties and *.jks / *.keystore are gitignored (already in android/.gitignore)
+# 4. Build signed artifacts:
+#    flutter build apk --release
+#    flutter build appbundle --release
+
+storePassword=CHANGE_ME_storePassword
+keyPassword=CHANGE_ME_keyPassword
+keyAlias=upload
+storeFile=app/upload-keystore.jks
